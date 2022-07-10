@@ -182,7 +182,7 @@ a:active {
   text-decoration: none;
 }
 
-a:hover {}
+/* a:hover {} */
 
 h1 {
   font-family: "Patagonia", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -260,9 +260,9 @@ strong {
   /* background-color: #141414; border: 1px solid #000; */
 }
 
-.button:hover {
+/* .button:hover { */
   /* background-color: #0192dd; color: #fff; */
-}
+/* } */
 
 .button.round {
   /* -moz-border-radius: 1000px;
@@ -277,7 +277,7 @@ strong {
   text-align: center;
 }
 
-.button:active {}
+/* .button:active {} */
 
 .button.option {
   float: right;

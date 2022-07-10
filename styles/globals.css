@@ -706,3 +706,21 @@ strong {
   float: left;
   margin: 0 9px 9px 0;
 }
+
+
+#suburbs ul {
+  margin-left: 38px;
+  padding-top: 38px;
+}
+
+#suburbs li {
+  width: 214px;
+  background-color: white;
+  float: left;
+  margin: 0 9px 9px 0;
+  padding: 10px 0;
+  font-size: 1.8em;
+  font-weight: bold;
+  line-height: 2.2em;
+  text-align: center;
+}

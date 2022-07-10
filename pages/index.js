@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Nav from "../components/Nav";
-// import Image from 'next/image'
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -13,7 +13,17 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav />
+      <Header />
+      <div style={{ backgroundColor: "#cacaca;" }}>
+        <ul id="about-us" className="wrapper">
+          <li>Over 35 years Experience</li>
+          <li>Same day Service</li>
+          <li>All Work Guaranteed</li>
+          <li>Fixed Price On Quote</li>
+          <li>Discount To Pensioners</li>
+        </ul>
+      </div>
+      <Footer />
     </div>
   );
 }

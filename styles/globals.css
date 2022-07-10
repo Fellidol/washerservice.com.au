@@ -5,9 +5,9 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-* {
-  /* box-sizing: border-box; */
-}
+/* * {
+  box-sizing: border-box;
+} */
 
 /* Reset (yui 3) */
 html {
@@ -261,7 +261,7 @@ strong {
 }
 
 /* .button:hover { */
-  /* background-color: #0192dd; color: #fff; */
+/* background-color: #0192dd; color: #fff; */
 /* } */
 
 .button.round {
@@ -675,10 +675,10 @@ strong {
   padding-bottom: 50px;
   padding-top: 50px;
 }
+
 /* About us page  */
 #about-us {
   padding: 80px 0 50px;
-  ;
   font-size: 1.8em;
   line-height: 1.8em;
   color: #353535;
@@ -692,4 +692,17 @@ strong {
   background-image: url(/img/bullet.png);
   background-repeat: no-repeat;
   padding-left: 50px;
+}
+
+#brands ul {
+  margin-left: 38px;
+  padding-top: 38px;
+}
+
+#brands li {
+  width: 214px;
+  height: 122px;
+  background-color: white;
+  float: left;
+  margin: 0 9px 9px 0;
 }

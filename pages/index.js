@@ -13,7 +13,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header small="" />
       <div style={{ backgroundColor: "#cacaca;" }}>
         <ul id="about-us" className="wrapper">
           <li>Over 35 years Experience</li>

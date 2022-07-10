@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 
-const Header = () => {
+const Header = (props) => {
+  const small = props.small ? "-small" : "";
+
   return (
     <>
       <div id="nav">
@@ -21,17 +23,17 @@ const Header = () => {
         </div>
       </div>
       <div className="mario-wrapper">
-        <img src="/img/mario.png" alt="mario" className="mario" />
+        <img src={`/img/mario${small}.png`} alt="mario" className="mario" />
       </div>
-      <div id="top">
+      <div id={`top${small}`}>
         <div className="wrapper">
           <h1> All Districts Washing Machine Service </h1>
           <div className="clear"></div>
           <h2>
             Call <strong>Mario</strong>, your local service man and save
           </h2>
-          <h3 className="phone"> 9704 7577 </h3>
-          <h3 className="mobile"> 0418 540 353 </h3>
+          <h3 className={`phone${small}`}> 9704 7577 </h3>
+          <h3 className={`mobile${small}`}>0418 540 353</h3>
         </div>
       </div>
     </>

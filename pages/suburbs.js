@@ -23,64 +23,41 @@ export default function Brands() {
 
           <ul className="columns four">
             <li>
-              Airport West <br />
-              Alphington <br />
-              Balwyn <br />
-              Blackburn <br />
-              Box Hill <br />
-              Brunswick <br />
-              Bulleen <br />
-              Bundoora <br />
-              Campbellfield <br />
-              Carlton <br />
-              Coburg <br />
-              Craigieburn <br />
-              Doncaster <br />
+              Mansfield
+              <br />
+              Bonnie Doon
+              <br />
+              Merton
+              <br />
+              Shepparton
             </li>
             <li>
-              Donvale <br />
-              Doreen <br />
-              Eaglemont <br />
-              Epping <br />
-              Essendon <br />
-              Fairfield <br />
-              Fawkner <br />
-              Fitzroy <br />
-              Glenroy <br />
-              Greensborough <br />
-              Heidelberg <br />
-              Hurstbridge <br />
-              Ivanhoe <br />
+              Yark
+              <br />
+              Killongworth
+              <br />
+              Euroa
+              <br />
+              Jamieson
             </li>
             <li>
-              Keilor <br />
-              Keilor East <br />
-              Kew <br />
-              Lalor <br />
-              Lower Plenty <br />
-              Meadow Heights <br />
-              Mernda <br />
-              Mill Park <br />
-              Mont Albert <br />
-              Moonee Ponds <br />
-              Oak Park <br />
-              Park Orchards <br />
-              Pascoevale <br />
+              Violet Town
+              <br />
+              Wangaratta
+              <br />
+              Alexandra
+              <br />
+              Molesworth
+              <br />
             </li>
             <li>
-              Preston <br />
-              Reservoir <br />
-              Rosanna <br />
-              Roxburgh Park <br />
-              South Morang <br />
-              Surrey Hills <br />
-              Templestowe <br />
-              Thomastown <br />
-              Thornbury <br />
-              Viewbank <br />
-              Warrandyte <br />
-              Watsonia <br />
-              Yarrambat <br />
+              Buxton
+              <br />
+              Eildon
+              <br />
+              Benalla
+              <br />
+              Shepparton
             </li>
           </ul>
 

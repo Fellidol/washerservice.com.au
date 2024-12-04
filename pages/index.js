@@ -16,11 +16,11 @@ export default function Home() {
       <Header small="" />
       <div style={{ backgroundColor: "#cacaca" }}>
         <ul id="about-us" className="wrapper">
-          <li>Over 50 years Experience</li>
-          <li>Same day Service</li>
-          <li>All Work Guaranteed</li>
-          <li>Fixed Price On Quote</li>
-          <li>Discount To Pensioners</li>
+          <li>Over 50 years experience</li>
+          <li>Same day service</li>
+          <li>All work guaranteed</li>
+          <li>Fixed price on quote</li>
+          <li>Discount to pensioners</li>
         </ul>
       </div>
       <Footer />

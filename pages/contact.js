@@ -19,13 +19,21 @@ export default function Brands() {
         &nbsp;
         <div style={{ backgroundColor: "#cacaca" }}>
           &nbsp;
-          <div id="contact" className="wrapper panel">
+          <div
+            id="contact"
+            className="wrapper panel"
+            style={{ boxSizing: "border-box" }}
+          >
             <h1 className="page-title"> Contact Us</h1>
             <div
-              style={{ padding: "100px 20px 20px 20px", textAlign: "center" }}
+              style={{
+                padding: "100px 20px 20px 20px",
+                textAlign: "center",
+                boxSizing: "border-box",
+              }}
               className="wrapper"
             >
-              <h2>
+              <h2 style={{ marginLeft: 0 }}>
                 Call <strong>Mario</strong>
               </h2>
               <a

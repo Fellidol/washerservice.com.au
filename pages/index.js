@@ -16,7 +16,7 @@ export default function Home() {
       <Header small="" />
       <div style={{ backgroundColor: "#cacaca" }}>
         <ul id="about-us" className="wrapper">
-          <li>Over 35 years Experience</li>
+          <li>Over 50 years Experience</li>
           <li>Same day Service</li>
           <li>All Work Guaranteed</li>
           <li>Fixed Price On Quote</li>

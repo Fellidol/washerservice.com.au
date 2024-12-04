@@ -22,14 +22,19 @@ export default function Brands() {
           <div id="contact" className="wrapper panel">
             <h1 className="page-title"> Contact Us</h1>
             <div
-              style={{ padding: "100px 20px 20px 20px" }}
+              style={{ padding: "100px 20px 20px 20px", textAlign: "center" }}
               className="wrapper"
             >
               <h2>
                 Call <strong>Mario</strong>
               </h2>
-              {/* <h3 className="phone"> 9704 7577 </h3> */}
-              <h3 className="mobile"> 0418 540 353 </h3>
+              <a
+                href="tel:0418 40353"
+                className="mobile"
+                style={{ margin: "0 auto", float: "none" }}
+              >
+                0418 540 353
+              </a>
               <div className="clear"></div>
               <br />
               <br />

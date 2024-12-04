@@ -23,41 +23,47 @@ export default function Brands() {
 
           <ul className="columns four">
             <li>
-              Mansfield
+              Alexandra
               <br />
               Bonnie Doon
               <br />
+              Buxton
+              <br />
+              Benalla
+              <br />
+              Eildon
+            </li>
+            <li>
+              Euroa
+              <br />
+              Jamieson
+              <br />
+              Killongworth
+              <br />
+              Mansfield
+              <br />
               Merton
               <br />
+            </li>
+            <li>
+              Molesworth
+              <br />
+              Seymour
+              <br />
               Shepparton
+              <br />
+              Violet Town
+              <br />
+              Wangaratta
             </li>
             <li>
               Yark
               <br />
-              Killongworth
+              Yea
               <br />
-              Euroa
               <br />
-              Jamieson
-            </li>
-            <li>
-              Violet Town
               <br />
-              Wangaratta
               <br />
-              Alexandra
-              <br />
-              Molesworth
-              <br />
-            </li>
-            <li>
-              Buxton
-              <br />
-              Eildon
-              <br />
-              Benalla
-              <br />
-              Shepparton
             </li>
           </ul>
 

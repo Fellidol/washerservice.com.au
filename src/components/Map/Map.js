@@ -16,7 +16,7 @@ function Map() {
       //            <circle cx="15" cy="40" r="10" fill="${color}" />
       //            <polygon points="15,5 30,20 0,20" fill="${color}" />
       //        </svg>`,
-      html: `<div style="background-color:${color}; " class="h-full w-full rounded-xl opacity-50"></div>`,
+      html: `<div style="background-color: ${color};" class="h-full w-full rounded-xl opacity-50"></div>`,
       iconSize: [25, 25],
       iconAnchor: [12, 12],
       popupAnchor: [0, -25],
@@ -29,7 +29,7 @@ function Map() {
         center={mapCenter}
         scrollWheelZoom={false} // Disable scroll-to-zoom
         style={{ height: "100%", width: "100%" }}
-        zoom={9}
+        zoom={8}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {mapData.map((town, index) => (

@@ -1,14 +1,25 @@
+"use client";
+
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import Section from "@/components/Section";
 import Navbar from "@/components/Navbar/Navbar";
 import Text, { H1, P } from "@/components/Text/Text";
-import Button from "@/components/Button/Button";
+import Button, { ButtonWhite } from "@/components/Button/Button";
 import imgHero from "@/img/hero-desktop.jpg";
 import imgHeroMobile from "@/img/hero-mobile.jpg";
 import imgAbout from "@/img/about.png";
 import imgAbout2 from "@/img/about2.jpg";
-import Slider from "@/components/Slider/Slider";
-import Map, { mapData } from "@/components/Map/Map";
+import SliderChoose from "@/components/SliderChoose/SliderChoose";
+import Map, { mapData } from "@/components/Map";
+import SliderBrands from "@/components/SliderBrands/SliderBrands";
+import imgContact from "@/img/contact.jpg";
+import imgLogo from "@/img/logo.svg";
+import Link from "next/link";
+import brands from "@/data/brands";
+import towns from "@/data/towns";
+
+// const Map = dynamic(() => import("@/components/Map"), { ssr: false });
 
 export default function Home() {
   return (
@@ -17,6 +28,7 @@ export default function Home() {
         <Navbar />
       </div>
 
+      {/* Hero */}
       <div className="relative bg-black z-0 overflow-hidden">
         <Image
           className="block md:hidden object-cover object-bottom pointer-events-none"
@@ -24,6 +36,7 @@ export default function Home() {
           alt="All Districts Washer Machine Service"
           fill={true}
           priority
+          sizes="768px"
         />
         <Image
           className="hidden md:block object-cover pointer-events-none"
@@ -31,6 +44,7 @@ export default function Home() {
           alt="All Districts Washer Machine Service"
           fill={true}
           priority
+          sizes="1512px"
         />
 
         <Section className="pt-[140px] pb-[180px] lg:pb-[140px]">
@@ -62,6 +76,7 @@ export default function Home() {
         </Section>
       </div>
 
+      {/* About */}
       <div className="bg-white text-black">
         <Section>
           <div className="flex flex-col gap-4 md:flex-row md:gap-16">
@@ -101,6 +116,7 @@ export default function Home() {
         </Section>
       </div>
 
+      {/* Why choose us */}
       <div className="relative bg-[#131E42] pb-[60px] lg:pb-[120px]">
         <Image
           className="object-cover object-top pointer-events-none z-0"
@@ -109,148 +125,179 @@ export default function Home() {
           fill={true}
           priority
         />
-        <Slider />
+        <SliderChoose />
       </div>
 
+      {/* Map */}
       <div className="relative h-auto sm:flex">
-        <div className="w-full sm:w-auto sm:h-full aspect-square sm:aspect-auto basis-5/12 overflow-hidden">
+        <div className="relative w-full sm:w-auto sm:h-full basis-5/12 overflow-hidden ">
+          <div className="absolute top-0 left-0 w-full h-[40px] lg:h-[120px] bg-gradient-to-b from-white to-white-0" />
           <div
-            className="w-full h-full p-8 lg:pt-[120px] overflow-scroll text-center sm:text-left"
+            className="aspect-square w-full h-full p-8 lg:py-[120px] overflow-scroll text-center sm:text-left "
             style={{
               paddingLeft: "calc(50vw - calc(min(100vw, 1024px)/2) + 32px)",
             }}
           >
             <H1 className="mb-8">Towns we service</H1>
-            <ul className=" mb-8">
-              {[
-                "Alexandra",
-                "Bonnie Doon",
-                "Benalla",
-                "Eildon",
-                "Euroa",
-                "Killingworth",
-                "Mansfield",
-                "Merton",
-                "Molesworth",
-                "Seymour",
-                "Shepparton",
-                "Violet Town",
-                "Wangaratta",
-                "Yark",
-              ].map((item) => (
-                <li key={item} className="p-0 m-0">
-                  <P>{item}</P>
+            <ul className=" mb-4">
+              {mapData.map((item) => (
+                <li
+                  key={item.color}
+                  className="flex justify-center sm:justify-start items-center gap-3 p-0 m-0"
+                >
+                  <div
+                    className="rounded aspect-square h-[0.5em]"
+                    style={{ backgroundColor: item.color }}
+                  ></div>
+                  <P>{item.name}</P>
                 </li>
               ))}
             </ul>
-            <P className="">and all surrounding suburbs</P>
+            <P>and all surrounding areas</P>
           </div>
+          <div className="absolute bottom-0 left-0 w-full h-[60px] lg:h-[120px] bg-gradient-to-t from-white to-white-0" />
         </div>
 
         <div className="relative w-full aspect-square sm:aspect-auto basis-7/12 bg-zinc-900 z-0 overflow-hidden">
           <Map />
         </div>
       </div>
+
+      <div
+        className="relative  pb-[60px] lg:pb-[120px]"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(67,87,103,1) 0%, rgba(37,51,66,1) 100%)",
+        }}
+      >
+        <SliderBrands />
+      </div>
+
+      {/* Contact */}
+      <div className="relative w-full flex flex-col md:flex-row">
+        <div className="relative w-full aspect-video">
+          <Image
+            className="object-cover pointer-events-none z-0"
+            src={imgContact}
+            alt="Washing machine in laundry room"
+            fill={true}
+            priority
+          />
+        </div>
+        <div
+          className="w-full aspect-video text-white text-center flex items-center justify-center"
+          style={{
+            background: "linear-gradient(90deg, #3F91C8 0%, #18557E 100%)",
+          }}
+        >
+          <div className="max-w-[350px] py-8 md:py-[60px] lg:py-[120px] grid gap-8">
+            <div className="grid gap-4">
+              <H1>Contact us</H1>
+              <P>
+                Have questions? Need a quote? <br />
+                Give us a call, we&apos;re here to help.
+              </P>
+            </div>
+
+            <div className="grid gap-4">
+              <P className="font-bold">Call Mario and save</P>
+              <div>
+                <ButtonWhite icon="phone" className="!inline-block">
+                  0418 540 353
+                </ButtonWhite>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer  */}
+      <div className="bg-[#142542] text-white">
+        <Section className="flex flex-col  md:flex-row justify-between  gap-8">
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center w-[180px] lg:w-[230px]">
+              <Image
+                src={imgLogo}
+                alt="Washer Service"
+                width={180}
+                height="auto"
+                priority
+                style={{ width: "100%", height: "auto" }}
+              />
+            </div>
+            <div>
+              <P className="font-bold">Opening hours</P>
+              <ul className="list-disc pl-4">
+                <li>
+                  <P>Mon to Sat</P>
+                </li>
+                <li>
+                  <P>7:30am - 7:00pm</P>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <P className="font-bold"> Payment method</P>
+              <ul className="list-disc pl-4">
+                <li>
+                  <P>Cash</P>
+                </li>
+                <li>
+                  <P>Electronic transfer</P>
+                </li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <P className="font-bold">Call Mario and save</P>
+              <div>
+                <Button icon="phone" className="!inline-block">
+                  0418 540 353
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <P className="font-bold">Pages</P>
+            {[
+              { id: "Home", href: "/" },
+              { id: "About Us", href: "/about-us" },
+              { id: "Brands", href: "/brands" },
+              { id: "Towns", href: "/towns" },
+              { id: "Contact", href: "/contact" },
+            ].map((item) => {
+              return (
+                <P key={item.id}>
+                  <Link href={item.href}>{item.id}</Link>
+                </P>
+              );
+            })}
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <P className="font-bold">Brands</P>
+            {brands.map((item) => {
+              return (
+                <P key={item.name}>
+                  <Link href="/brands">{item.name}</Link>
+                </P>
+              );
+            })}
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <P className="font-bold">Towns</P>
+            {towns.map((item) => {
+              return (
+                <P key={item.name}>
+                  <Link href="/towns">{item.name}</Link>
+                </P>
+              );
+            })}
+          </div>
+        </Section>
+      </div>
     </>
   );
 }
-
-// export default function Home() {
-//   return (
-//     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-//       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-//         <Image
-//           className="dark:invert"
-//           src="/next.svg"
-//           alt="Next.js logo"
-//           width={180}
-//           height={38}
-//           priority
-//         />
-//         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-//           <li className="mb-2">
-//             Get started by editing{" "}
-//             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-//               src/app/page.js
-//             </code>
-//             .
-//           </li>
-//           <li>Save and see your changes instantly.</li>
-//         </ol>
-
-//         <div className="flex gap-4 items-center flex-col sm:flex-row">
-//           <a
-//             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-//             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <Image
-//               className="dark:invert"
-//               src="/vercel.svg"
-//               alt="Vercel logomark"
-//               width={20}
-//               height={20}
-//             />
-//             Deploy now
-//           </a>
-//           <a
-//             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-//             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Read our docs
-//           </a>
-//         </div>
-//       </main>
-//       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="/file.svg"
-//             alt="File icon"
-//             width={16}
-//             height={16}
-//           />
-//           Learn
-//         </a>
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="/window.svg"
-//             alt="Window icon"
-//             width={16}
-//             height={16}
-//           />
-//           Examples
-//         </a>
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="/globe.svg"
-//             alt="Globe icon"
-//             width={16}
-//             height={16}
-//           />
-//           Go to nextjs.org →
-//         </a>
-//       </footer>
-//     </div>
-//   );
-// }

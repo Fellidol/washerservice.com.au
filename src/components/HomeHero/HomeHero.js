@@ -16,7 +16,7 @@ export default function HomeHero() {
       />
 
       <div className="container mx-auto">
-        <div className=" relative max-w-[490px] pt-[140px] pb-[60px] px-8 text-white grid gap-4">
+        <div className=" relative max-w-[490px] pt-[140px] lg:pt-[300px] pb-[60px] px-8 text-white grid gap-4">
           <div>
             <Text className="font-bold">All Districts</Text>
             <H1>Washing Machine Service</H1>

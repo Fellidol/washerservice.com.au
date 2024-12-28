@@ -1,6 +1,6 @@
 const Text = (props) => {
   return (
-    <p className={`text-base lg:text-xl ${props.className}`}>
+    <p as={props.as} className={`text-base lg:text-xl ${props.className}`}>
       {props.children}
     </p>
   );
@@ -8,7 +8,10 @@ const Text = (props) => {
 
 const H1 = (props) => {
   return (
-    <h1 className={`text-2xl lg:text-3xl font-bold ${props.className}`}>
+    <h1
+      as={props.as}
+      className={`text-2xl lg:text-3xl font-bold ${props.className}`}
+    >
       {props.children}
     </h1>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import smoothscroll from "smoothscroll-polyfill";
 import Section from "@/components/Section";
@@ -18,17 +18,27 @@ export default function Slider() {
   }, []);
 
   useEffect(() => {
-    if (!scrollContainerRef || !arrowPrevRef || !arrowNextRef) {
-      return;
-    }
+    if (!scrollContainerRef || !arrowPrevRef || !arrowNextRef) return;
 
     const scrollContainer = scrollContainerRef.current;
-
     const arrowPrev = arrowPrevRef.current;
     const arrowNext = arrowNextRef.current;
 
+    scrollContainer.addEventListener("scroll", handleScroll);
     arrowPrev.addEventListener("click", handleClickPrev);
     arrowNext.addEventListener("click", handleClickNext);
+
+    // TODO - this handler shoild be debounced or throttled
+    function handleScroll() {
+      const scrollLeft = scrollContainer.scrollLeft;
+      const scrollWidth =
+        scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+      // TODO - shouldnt set this style directly on the element,
+      // the style will be lost of the component is rerendered.
+      arrowPrev.style.opacity = scrollLeft <= 0 ? 0.5 : 1;
+      arrowNext.style.opacity = scrollLeft == scrollWidth ? 0.5 : 1;
+    }
 
     function handleClickPrev() {
       const scrollLeft = scrollContainer.scrollLeft - calcScrollDistance();
@@ -52,6 +62,7 @@ export default function Slider() {
     }
 
     return () => {
+      scrollContainer.removeEventListener("scroll", handleScroll);
       arrowPrev.removeEventListener("click", handleClickPrev);
       arrowNext.removeEventListener("click", handleClickNext);
     };
@@ -65,7 +76,7 @@ export default function Slider() {
           <div className="flex gap-6">
             <button
               ref={arrowPrevRef}
-              className="relative w-[40px] h-[40px] rotate-180"
+              className="relative w-[40px] h-[40px] rotate-180 transition-all"
             >
               <Image
                 src={imgArrow}
@@ -75,7 +86,10 @@ export default function Slider() {
                 priority
               />
             </button>
-            <button ref={arrowNextRef} className="relative w-[40px] h-[40px]">
+            <button
+              ref={arrowNextRef}
+              className="relative w-[40px] h-[40px] transition-all"
+            >
               <Image
                 src={imgArrow}
                 fill={true}

@@ -4,7 +4,7 @@ import Section from "@/components/Section";
 import { P } from "@/components/Text/Text";
 import Button from "@/components/Button/Button";
 import imgLogo from "@/img/logo.svg";
-import { brands, pages, towns } from "@/data/";
+import { brands, contact, pages, towns } from "@/data/";
 
 export default function Footer() {
   return (
@@ -47,8 +47,12 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <P className="font-bold">Call Mario and save</P>
             <div>
-              <Button icon="phone" className="!inline-block">
-                0418 540 353
+              <Button
+                icon="phone"
+                className="!inline-block"
+                href={`tel:${contact.phone}`}
+              >
+                {contact.phoneNice}
               </Button>
             </div>
           </div>

@@ -51,9 +51,9 @@ export default function Navbar(props) {
 
       <div className="hidden lg:flex items-center gap-6 text-white">
         {pages.map((item) => (
-          <P key={item.name} className="lg:text-base font-bold">
+          <p key={item.name} className="text-base font-bold">
             {item.name}
-          </P>
+          </p>
         ))}
       </div>
 
@@ -63,7 +63,7 @@ export default function Navbar(props) {
           icon="phone"
           textClassName="hidden lg:block lg:text-base"
         >
-          {contact.phoneNice}
+          <span className="text-base">{contact.phoneNice}</span>
         </Button>
       </div>
     </div>

@@ -7,7 +7,7 @@ export default function Button(props) {
   return (
     <a
       href={props.href}
-      className={` py-3 px-5 bg-[#007EA7] rounded-lg ${props.className}`}
+      className={`inline-block py-3 px-5 bg-[#007EA7] rounded-lg ${props.className}`}
     >
       <div
         className={`flex gap-3 justify-center items-center ${props.iconClassName}`}

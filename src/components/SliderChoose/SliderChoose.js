@@ -37,7 +37,7 @@ export default function Slider() {
         scrollContainer.scrollWidth - scrollContainer.clientWidth;
 
       // TODO - shouldnt set this style directly on the element,
-      // the style will be lost of the component is rerendered.
+      // the style will be lost if the component is   ever e-rendered.
       arrowPrev.style.opacity = scrollLeft <= 0 ? 0.5 : 1;
       arrowNext.style.opacity = scrollLeft == scrollWidth ? 0.5 : 1;
     }
@@ -72,8 +72,8 @@ export default function Slider() {
 
   return (
     <>
-      <Section className="pb-6 lg:pb-[60px]">
-        <header className="relative flex place-content-between items-start text-white">
+      <Section className="pb-6 md:pb-[60px] lg:pb-[60px]">
+        <div className="relative flex place-content-between items-start text-white">
           <H1>Why choose us?</H1>
           <div className="flex gap-6 md:hidden">
             <button
@@ -101,7 +101,7 @@ export default function Slider() {
               />
             </button>
           </div>
-        </header>
+        </div>
       </Section>
 
       <div className="relative">

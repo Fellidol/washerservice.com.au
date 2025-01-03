@@ -70,8 +70,8 @@ export default function Slider() {
 
   return (
     <>
-      <Section className="pb-6 lg:pb-[60px]">
-        <header className="relative flex place-content-between items-start text-white">
+      <Section className="pb-6 md:pb-[60px] lg:pb-[60px]">
+        <div className="relative flex place-content-between items-start text-white">
           <H1>Brands</H1>
           <div className="flex gap-6">
             <button
@@ -99,7 +99,7 @@ export default function Slider() {
               />
             </button>
           </div>
-        </header>
+        </div>
       </Section>
 
       <div className="relative">

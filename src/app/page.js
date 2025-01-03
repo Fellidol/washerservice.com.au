@@ -1,6 +1,7 @@
-// "use client";
+"use client";
 
 import Image from "next/image";
+import { motion } from "motion/react";
 import Section from "@/components/Section";
 import Text, { H1, P } from "@/components/Text/Text";
 import Button, { ButtonWhite } from "@/components/Button/Button";
@@ -15,6 +16,7 @@ import imgContact from "@/img/contact.jpg";
 import towns from "@/data/towns";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header/Header";
+import { contact } from "@/data";
 
 export default function Home() {
   return (
@@ -52,31 +54,39 @@ const Hero = () => (
       sizes="1512px"
     />
 
-    <Section className="pt-[140px] pb-[180px] lg:pb-[140px]">
-      <div className="relative max-w-[450px] text-white grid gap-4">
-        <div>
+    <Section className="pt-[140px] pb-[180px] md:pt-[140px] lg:pt-[200px] lg:pb-[140px]">
+      <div className="relative max-w-[450px] text-white grid gap-6">
+        <MotionFadeInUp>
           <Text className="font-bold">All Districts</Text>
           <H1>Washing Machine Service</H1>
-        </div>
-        <div className="grid gap-4">
+        </MotionFadeInUp>
+
+        <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.25 }}>
           <P>
             When your washing machine isn&apos;t doing its job, you need a fast
             and reliable solution.
           </P>
+        </MotionFadeInUp>
+
+        <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.5 }}>
           <P>
             With years of experience, professional tools, and a commitment to
             quality, we&apos;re here to get your machine back in action.
           </P>
-        </div>
+        </MotionFadeInUp>
 
-        <div className="grid gap-4">
+        <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.75 }}>
           <P className="font-bold">Call Mario and save</P>
           <div>
-            <Button icon="phone" className="!inline-block">
-              0418 540 353
+            <Button
+              icon="phone"
+              className="!inline-block"
+              href={`tel:${contact.phone}`}
+            >
+              {contact.phoneNice}
             </Button>
           </div>
-        </div>
+        </MotionFadeInUp>
       </div>
     </Section>
   </div>
@@ -86,9 +96,11 @@ const About = () => (
   <div className="bg-white text-black">
     <Section>
       <div className="flex flex-col gap-4 md:flex-row md:gap-16">
-        <H1 className="text-balance md:hidden">
-          Trusted Washing Machine Repair for over 50 years
-        </H1>
+        <MotionFadeInUp className="md:hidden">
+          <H1 className="text-balance">
+            Trusted Washing Machine Repair for over 50 years!
+          </H1>
+        </MotionFadeInUp>
 
         <div className="relative aspect-video w-full rounded-lg lg:aspect-square">
           <Image
@@ -100,22 +112,32 @@ const About = () => (
           />
         </div>
 
-        <div className="w-full flex flex-col gap-4 justify-center">
-          <H1 className="hidden md:block text-balance">
-            Trusted Washing Machine Repair for over 50 years
-          </H1>
+        <div className="w-full flex flex-col gap-6 justify-center">
+          <MotionFadeInUp className="hidden md:block">
+            <H1 className="text-balance">
+              Trusted Washing Machine Repair for over 50 years
+            </H1>
+          </MotionFadeInUp>
 
-          <P>
-            We deliver fast, reliable service to get your appliance running
-            smoothly again. With affordable rates and a commitment to quality,
-            we make it easy to get your laundry routine back on track.
-          </P>
-          <P>Contact us today for professional, hassle-free repairs!</P>
-          <div>
-            <Button icon="phone" className="inline-block">
-              0418 540 353
-            </Button>
-          </div>
+          <MotionFadeInUp>
+            <P>
+              We deliver fast, reliable service to get your appliance running
+              smoothly again. With affordable rates and a commitment to quality,
+              we make it easy to get your laundry routine back on track.
+            </P>
+          </MotionFadeInUp>
+
+          <MotionFadeInUp>
+            <P>Contact us today for professional, hassle-free repairs!</P>
+          </MotionFadeInUp>
+
+          <MotionFadeInUp>
+            <div>
+              <Button icon="phone" href={`tel:${contact.phone}`}>
+                {contact.phoneNice}
+              </Button>
+            </div>
+          </MotionFadeInUp>
         </div>
       </div>
     </Section>
@@ -123,7 +145,7 @@ const About = () => (
 );
 
 const WhyChooseUs = () => (
-  <div className="relative bg-[#131E42] pb-[60px] lg:pb-[120px]">
+  <div className="relative bg-[#131E42] pb-[60px] md:pb-[90px] lg:pb-[120px]">
     <Image
       className="object-cover object-top pointer-events-none z-0"
       src={imgAbout2}
@@ -173,7 +195,7 @@ const MapSection = () => (
 
 const Brands = () => (
   <div
-    className="relative  pb-[60px] lg:pb-[120px]"
+    className="relative  pb-[60px] md:pb-[90px] lg:pb-[120px]"
     style={{
       background:
         "linear-gradient(90deg, rgba(67,87,103,1) 0%, rgba(37,51,66,1) 100%)",
@@ -201,23 +223,67 @@ const ContactUs = () => (
       }}
     >
       <div className="max-w-[350px] py-8 md:py-[60px] lg:py-[120px] grid gap-8">
-        <div className="grid gap-4">
-          <H1>Contact us</H1>
-          <P>
-            Have questions? Need a quote? <br />
-            Give us a call, we&apos;re here to help.
-          </P>
-        </div>
-
-        <div className="grid gap-4">
-          <P className="font-bold">Call Mario and save</P>
-          <div>
-            <ButtonWhite icon="phone" className="!inline-block">
-              0418 540 353
-            </ButtonWhite>
+        <motion.div
+          initial={{ opacity: 0, transform: "translateY(50px)" }}
+          whileInView={{
+            opacity: 1,
+            transform: "translateY(0)",
+            ease: ["easeOut", "easeOut"],
+          }}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ duration: 0.3, delay: 0 }}
+        >
+          <div className="grid gap-4">
+            <H1>Contact us</H1>
+            <P>
+              Have questions? Need a quote? <br />
+              Give us a call, we&apos;re here to help.
+            </P>
           </div>
-        </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, transform: "translateY(50px)" }}
+          whileInView={{
+            opacity: 1,
+            transform: "translateY(0)",
+            ease: ["easeOut", "easeOut"],
+          }}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ duration: 0.3, delay: 0 }}
+        >
+          <div className="grid gap-4">
+            <P className="font-bold">Call Mario and save</P>
+            <div>
+              <ButtonWhite
+                icon="phone"
+                className="!inline-block"
+                href={`tel:${contact.phone}`}
+              >
+                {contact.phoneNice}
+              </ButtonWhite>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   </div>
 );
+
+const MotionFadeInUp = (props) => {
+  return (
+    <motion.div
+      className={props.className}
+      initial={{ opacity: 0, transform: "translateY(50px)" }}
+      whileInView={{
+        opacity: 1,
+        transform: "translateY(0)",
+        ease: ["easeOut", "easeOut"],
+      }}
+      transition={{ duration: 0.5, delay: 0, ...props.transition }}
+      viewport={{ once: true, amount: 1 }}
+    >
+      {props.children}
+    </motion.div>
+  );
+};

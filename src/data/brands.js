@@ -1,4 +1,4 @@
-import fischerPaykel from "@/components/SliderBrands/images/fisher-paykel.svg";
+import fisherPaykel from "@/components/SliderBrands/images/fisher-paykel.svg";
 import bosch from "@/components/SliderBrands/images/bosch.svg";
 import samsung from "@/components/SliderBrands/images/samsung.svg";
 import lg from "@/components/SliderBrands/images/lg.svg";
@@ -12,7 +12,7 @@ import speedqueen from "@/components/SliderBrands/images/speedqueen.svg";
 import asko from "@/components/SliderBrands/images/asko.svg";
 
 const brands = [
-  { name: "Fischer & Paykel", image: fischerPaykel },
+  { name: "Fisher & Paykel", image: fisherPaykel },
   { name: "Bosch", image: bosch },
   { name: "Samsung", image: samsung },
   { name: "LG", image: lg },

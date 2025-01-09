@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import dynamic from "next/dynamic";
 import Section from "@/components/Section";
 import Text, { H1, P } from "@/components/Text/Text";
 import Button, { ButtonWhite } from "@/components/Button/Button";
@@ -10,13 +11,15 @@ import imgHeroMobile from "@/img/hero-mobile.jpg";
 import imgAbout from "@/img/about.png";
 import imgAbout2 from "@/img/about2.jpg";
 import SliderChoose from "@/components/SliderChoose/SliderChoose";
-import Map from "@/components/Map/Map";
+// import Map from "@/components/Map/Map";
 import SliderBrands from "@/components/SliderBrands/SliderBrands";
 import imgContact from "@/img/contact.jpg";
 import towns from "@/data/towns";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header/Header";
 import { contact } from "@/data";
+
+const Map = dynamic(() => import("@/components/Map/Map"), { ssr: false }); // Only import <Map /> on client side.
 
 export default function Home() {
   return (

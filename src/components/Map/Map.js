@@ -23,7 +23,7 @@ function Map() {
     <div style={{ width: "100%", height: "100%" }}>
       <MapContainer
         center={mapCenter}
-        scrollWheelZoom={false} // Disable scroll-to-zoom
+        // scrollWheelZoom={false} // Disable scroll-to-zoom
         dragging={false} // Disable panning
         style={{ height: "100%", width: "100%" }}
         zoom={8}

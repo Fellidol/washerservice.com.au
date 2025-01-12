@@ -165,7 +165,7 @@ const MapSection = () => (
     <div className="relative w-full sm:w-auto sm:h-full basis-5/12 overflow-hidden ">
       <div className="absolute top-0 left-0 w-full h-[40px] lg:h-[120px] bg-gradient-to-b from-white to-white-0" />
       <div
-        className=" w-full h-full max-h-[100vw] p-8 lg:py-[120px] overflow-scroll text-center sm:text-left "
+        className=" w-full h-full p-8 lg:py-[120px] overflow-scroll text-center sm:text-left "
         style={{
           paddingLeft: "calc(50vw - calc(min(100vw, 1024px)/2) + 32px)",
         }}

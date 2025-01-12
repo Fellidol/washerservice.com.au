@@ -1,0 +1,20 @@
+[
+  { "name": "Alexandra", "coords": [-37.1918, 145.7116], "color": "red" },
+  { "name": "Bonnie Doon", "coords": [-37.03, 145.878], "color": "crimson" },
+  { "name": "Benalla", "coords": [-36.5511, 145.9847], "color": "coral" },
+  { "name": "Eildon", "coords": [-37.23, 145.906], "color": "gold" },
+  { "name": "Euroa", "coords": [-36.752, 145.573], "color": "peachpuff" },
+  {
+    "name": "Killingworth",
+    "coords": [-37.1833, 145.5667],
+    "color": "forestgreen"
+  },
+  { "name": "Mansfield", "coords": [-37.0526, 146.0882], "color": "olive" },
+  { "name": "Merton", "coords": [-36.9667, 145.6833], "color": "aquamarine" },
+  { "name": "Molesworth", "coords": [-37.1833, 145.6167], "color": "teal" },
+  { "name": "Seymour", "coords": [-37.0269, 145.134], "color": "deepskyblue" },
+  { "name": "Shepparton", "coords": [-36.3833, 145.4], "color": "royalblue" },
+  { "name": "Violet Town", "coords": [-36.638, 145.717], "color": "plum" },
+  { "name": "Wangaratta", "coords": [-36.358, 146.312], "color": "indigo" },
+  { "name": "Yark", "coords": [-37.0833, 145.6167], "color": "black" }
+]

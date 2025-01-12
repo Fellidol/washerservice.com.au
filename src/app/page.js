@@ -53,7 +53,7 @@ const Hero = () => (
       alt="All Districts Washer Machine Service"
       fill={true}
       priority
-      sizes="1512px"
+      sizes="2500px"
     />
 
     <Section className="pt-[140px] pb-[180px] md:pt-[140px] lg:pt-[200px] lg:pb-[140px]">

@@ -1,17 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
 import dynamic from "next/dynamic";
+import { motion } from "motion/react";
 import Section from "@/components/Section";
 import Text, { H1, P } from "@/components/Text/Text";
 import Button, { ButtonWhite } from "@/components/Button/Button";
-import imgHero from "@/img/hero-desktop.jpg";
+import imgHero from "@/img/hero-desktop-sharpened.jpg";
 import imgHeroMobile from "@/img/hero-mobile.jpg";
 import imgAbout from "@/img/about.png";
 import imgAbout2 from "@/img/about2.jpg";
 import SliderChoose from "@/components/SliderChoose/SliderChoose";
-// import Map from "@/components/Map/Map";
 import SliderBrands from "@/components/SliderBrands/SliderBrands";
 import imgContact from "@/img/contact.jpg";
 import towns from "@/data/towns";

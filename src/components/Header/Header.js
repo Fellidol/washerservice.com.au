@@ -1,8 +1,6 @@
-"use client";
-
 import { useState } from "react";
 import Link from "next/link";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar2/Navbar";
 import { H1 } from "../Text/Text";
 import { pages } from "@/data";
 

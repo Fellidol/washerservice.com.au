@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 lg:pt-3">
+        {/* <div className="flex flex-col gap-2 lg:pt-3">
           <P className="font-bold">Pages</P>
           {pages.map((item) => {
             return (
@@ -67,14 +67,15 @@ export default function Footer() {
               </P>
             );
           })}
-        </div>
+        </div> */}
 
         <div className="flex flex-col gap-2 lg:pt-3">
           <P className="font-bold">Brands</P>
           {brands.map((item) => {
             return (
               <P key={item.name}>
-                <Link href="/brands">{item.name}</Link>
+                {/* <Link href="/brands">{item.name}</Link> */}
+                {item.name}
               </P>
             );
           })}
@@ -85,7 +86,8 @@ export default function Footer() {
           {towns.map((item) => {
             return (
               <P key={item.name}>
-                <Link href="/towns">{item.name}</Link>
+                {/* <Link href="/towns">{item.name}</Link> */}
+                {item.name}
               </P>
             );
           })}

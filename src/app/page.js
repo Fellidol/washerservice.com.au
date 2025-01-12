@@ -117,15 +117,16 @@ const About = () => (
         <div className="w-full flex flex-col gap-6 justify-center">
           <MotionFadeInUp className="hidden md:block">
             <H1 className="text-balance">
-              Trusted Washing Machine Repair for over 50 years
+              Trusted Washing Machine Repairman for over 50 years
             </H1>
           </MotionFadeInUp>
 
           <MotionFadeInUp>
             <P>
               We deliver fast, reliable service to get your appliance running
-              smoothly again. With affordable rates and a commitment to quality,
-              we make it easy to get your laundry routine back on track.
+              smoothly again. As a <strong>family-run business</strong>, we take
+              pride in providing affordable rates and a commitment to quality,
+              making it easy to get your laundry routine back on track.
             </P>
           </MotionFadeInUp>
 

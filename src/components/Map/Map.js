@@ -24,6 +24,7 @@ function Map() {
       <MapContainer
         center={mapCenter}
         scrollWheelZoom={false} // Disable scroll-to-zoom
+        dragging={false} // Disable panning
         style={{ height: "100%", width: "100%" }}
         zoom={8}
       >

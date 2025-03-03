@@ -52,7 +52,7 @@ const NavbarMobile = (props) => {
 function NavbarDesktop(props) {
   return (
     <div className="relative py-4 px-8 bg-black bg-opacity-40 backdrop-blur-xl z-10">
-      <Section className="flex justify-between align-middle gap-3 !py-0 px-0 lg:px-8">
+      <div className="max-w-[1024px] mx-auto flex justify-between align-middle lg:px-8">
         <button
           className="flex items-center lg:hidden"
           onClick={() => {
@@ -108,7 +108,7 @@ function NavbarDesktop(props) {
             <span className="text-base">{contact.phoneNice}</span>
           </Button>
         </div>
-      </Section>
+      </div>
     </div>
   );
 }

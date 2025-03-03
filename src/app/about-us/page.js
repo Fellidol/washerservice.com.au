@@ -1,20 +1,18 @@
 import Image from "next/image";
-import Section from "@/components/Section";
-import Text, { H1, P } from "@/components/Text/Text";
-import Button from "@/components/Button/Button";
-import imgHero from "@/img/hero-desktop-sharpened.jpg";
-import imgHeroMobile from "@/img/hero-mobile.jpg";
-import Footer from "@/components/Footer";
 import Header from "@/components/Header/Header";
-import MotionFadeInUp from "../components/Motion/MotionFadeInUp";
+import Section from "@/components/Section";
+import { H1, P } from "@/components/Text/Text";
+import Button from "@/components/Button/Button";
+import imgHeroMobile from "@/img/about-hero-mobile.jpg";
+import Footer from "@/components/Footer";
 import SectionAboutUs from "@/components/SectionAboutUs/SectionAboutUs";
 import SectionWhyChooseUs from "@/components/SectionWhySchooseUs/SectionWhyChooseUs";
-import SectionMap from "@/components/SectionMap/SectionMap";
-import SectionBrands from "@/components/SectionBrands/SectionBrands";
 import SectionContactUs from "@/components/SectionContactUs/SectionContactUs";
+import MotionFadeInUp from "@/components/Motion/MotionFadeInUp";
 import { contact } from "@/data";
+import imgHero from "@/img/about-hero-desktop.jpg";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Header />
@@ -22,8 +20,6 @@ export default function Home() {
         <Hero />
         <SectionAboutUs />
         <SectionWhyChooseUs />
-        <SectionMap />
-        <SectionBrands />
         <SectionContactUs />
       </main>
       <Footer />
@@ -34,7 +30,7 @@ export default function Home() {
 const Hero = () => (
   <div className="relative bg-black z-0 overflow-hidden">
     <Image
-      className="block md:hidden object-cover object-bottom pointer-events-none"
+      className="block md:hidden object-cover  pointer-events-none"
       src={imgHeroMobile}
       alt="All Districts Washer Machine Service"
       fill={true}
@@ -53,25 +49,31 @@ const Hero = () => (
     <Section className="pt-[140px] pb-[180px] md:pt-[140px] lg:pt-[200px] lg:pb-[140px]">
       <div className="relative max-w-[450px] text-white grid gap-6">
         <MotionFadeInUp>
-          <Text className="font-bold">All Districts</Text>
-          <H1>Washing Machine Service</H1>
+          <H1>About us</H1>
         </MotionFadeInUp>
-
         <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.25 }}>
           <P>
-            When your washing machine isn&apos;t doing its job, you need a fast
-            and reliable solution.
+            With over 50 years of hands-on experience, we’ve built a reputation
+            for reliable, same-day washing machine repairs that you can count
+            on.
           </P>
         </MotionFadeInUp>
-
         <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.5 }}>
           <P>
-            With years of experience, professional tools, and a commitment to
-            quality, we&apos;re here to get your machine back in action.
+            We believe in clear communication and transparency, which is why we
+            offer fixed-price quotes with no surprises, and all our work is
+            guaranteed to give you peace of mind.
+          </P>
+        </MotionFadeInUp>
+        <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.75 }}>
+          <P>
+            Plus, we’re proud to support our community with discounts for
+            pensioners. When you need quality repairs done right the first time,
+            we’re here to help.
           </P>
         </MotionFadeInUp>
 
-        <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.75 }}>
+        <MotionFadeInUp className="grid gap-4" transition={{ delay: 1 }}>
           <P className="font-bold">Call Mario and save</P>
           <div>
             <Button

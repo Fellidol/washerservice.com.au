@@ -56,6 +56,7 @@ export default function Slider() {
       });
     }
 
+    // TODO - dont use a static value, should calc depending on breakpoint
     function calcScrollDistance() {
       const distance2 = 288;
       return distance2;

@@ -85,7 +85,7 @@ function NavbarDesktop(props) {
             src={imgLogo}
             alt="Washer Service"
             width={167}
-            height={30}
+            height="auto"
             priority
             style={{ width: "100%", height: "auto" }}
           />

@@ -11,7 +11,7 @@ const Map = dynamic(() => import("@/components/SectionMap/Map"), {
 
 export default function SectionMap() {
   return (
-    <div className="relative h-auto sm:flex">
+    <div className="relative h-auto bg-white sm:flex">
       <div className="relative w-full sm:w-auto sm:h-full basis-5/12 overflow-hidden ">
         <div className="absolute top-0 left-0 w-full h-[40px] lg:h-[120px] bg-gradient-to-b from-white to-white-0" />
         <div

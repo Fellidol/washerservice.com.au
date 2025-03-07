@@ -9,7 +9,7 @@ import { contact } from "@/data";
 
 export default function SectionAboutUs() {
   return (
-    <div className="bg-white text-black">
+    <div className="relative bg-white text-black">
       <Section>
         <div className="flex flex-col gap-4 md:flex-row md:gap-16">
           <MotionFadeInUp className="md:hidden">

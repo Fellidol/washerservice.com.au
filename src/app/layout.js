@@ -1,7 +1,7 @@
-import { GoogleAnalytics } from "nextjs-google-analytics";
-import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import GAnalytics from "@/components/GAnalytics/GAnalytics";
 
 const montserrat = localFont({
   src: "../fonts/Montserrat-VariableFont_wght.ttf",
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${montserrat.className} antialiased`}>
         {children}
-        <GoogleAnalytics trackPageViews gaMeasurementId="G-KP5EWEWM2N" />
+        <GAnalytics />
         <Analytics />
       </body>
     </html>

@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${montserrat.className} antialiased`}>
         {children}
+        <GoogleAnalytics trackPageViews gaMeasurementId="G-KP5EWEWM2N" />
         <Analytics />
       </body>
     </html>

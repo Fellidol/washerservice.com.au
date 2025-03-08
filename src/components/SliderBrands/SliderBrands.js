@@ -1,12 +1,28 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import smoothscroll from "smoothscroll-polyfill";
 import Section from "@/components/Section";
 import imgArrow from "@/img/arrow-right.svg";
 import { H1, P } from "../Text/Text";
 import brands from "@/data/brands";
+
+const listVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3 } },
+};
 
 export default function Slider() {
   const scrollContainerRef = useRef(null);
@@ -103,22 +119,24 @@ export default function Slider() {
         </div>
       </Section>
 
-      <div className="relative">
-        <div
-          ref={scrollContainerRef}
-          className="relative hide-scrollbars overflow-x-scroll scroll-smooth overflow-hidden"
+      <div
+        ref={scrollContainerRef}
+        className="relative hide-scrollbars overflow-x-scroll overflow-y-visible scroll-smooth"
+      >
+        <motion.div
+          className="w-[fit-content] grid grid-flow-col gap-3 md:gap-6 lg:gap-9"
+          style={{
+            padding: "0 calc(50vw - calc(min(100vw, 1024px)/2) + 30px)",
+          }}
+          initial="hidden"
+          whileInView="visible"
+          variants={listVariants}
+          viewport={{ once: true }}
         >
-          <div
-            className="w-[fit-content] grid grid-flow-col gap-3 md:gap-6 lg:gap-9"
-            style={{
-              padding: "0 calc(50vw - calc(min(100vw, 1024px)/2) + 30px)",
-            }}
-          >
-            {brands.map((item) => (
-              <Card key={item.name} img={item.image} alt={item.name} />
-            ))}
-          </div>
-        </div>
+          {brands.map((item) => (
+            <Card key={item.name} img={item.image} alt={item.name} />
+          ))}
+        </motion.div>
       </div>
     </>
   );
@@ -126,8 +144,9 @@ export default function Slider() {
 
 function Card(props) {
   return (
-    <div
-      className={`relative w-[140px] md:w-[180px] lg:w-[200px] p-4 rounded-xl overflow-hidden flex flex-col gap-3 bg-white ${props.className}`}
+    <motion.div
+      className={`relative w-[140px] md:w-[180px] lg:w-[200px] p-4 rounded-xl  flex flex-col gap-3 bg-white ${props.className}`}
+      variants={itemVariants}
     >
       <div className="relative w-full aspect-square grid items-center justify-center">
         <Image
@@ -137,6 +156,6 @@ function Card(props) {
           style={{ objectFit: "contain" }}
         />
       </div>
-    </div>
+    </motion.div>
   );
 }

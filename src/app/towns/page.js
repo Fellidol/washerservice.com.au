@@ -61,13 +61,13 @@ const Hero = () => (
           </MotionFadeInUp>
           <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.5 }}>
             <P>
-              We&spos;re committed to arriving on time, fully equipped to handle
+              We&apos;re committed to arriving on time, fully equipped to handle
               your repair with speed and precision.
             </P>
           </MotionFadeInUp>
           <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.75 }}>
             <P>
-              We&spos;re dedicated to delivering professional service that gets
+              We&apos;re dedicated to delivering professional service that gets
               your washer back up and running without delay. Wherever you are,
               you can trust us to keep your laundry routine on track.
             </P>

@@ -5,7 +5,7 @@ import imgAbout2 from "@/img/about2.jpg";
 
 export default function SectionWhyChooseUs() {
   return (
-    <div className="relative bg-[#131E42] pb-[60px] md:pb-[90px] lg:pb-[120px]">
+    <div className="relative  pb-[60px] md:pb-[90px] lg:pb-[120px]">
       <Image
         className="object-cover object-top pointer-events-none z-0"
         src={imgAbout2}
@@ -13,6 +13,7 @@ export default function SectionWhyChooseUs() {
         fill={true}
         priority
       />
+
       <SliderChoose />
     </div>
   );

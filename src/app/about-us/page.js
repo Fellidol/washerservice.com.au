@@ -55,7 +55,7 @@ const Hero = () => (
           </MotionFadeInUp>
           <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.25 }}>
             <P>
-              With over 50 years of hands-on experience, we’ve built a
+              With over 50 years of hands-on experience, we&apos;ve built a
               reputation for reliable, same-day washing machine repairs that you
               can count on.
             </P>
@@ -69,9 +69,9 @@ const Hero = () => (
           </MotionFadeInUp>
           <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.75 }}>
             <P>
-              Plus, we’re proud to support our community with discounts for
+              Plus, we&apos;re proud to support our community with discounts for
               pensioners. When you need quality repairs done right the first
-              time, we’re here to help.
+              time, we&apos;re here to help.
             </P>
           </MotionFadeInUp>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import smoothscroll from "smoothscroll-polyfill";
 import Section from "@/components/Section";
@@ -9,6 +10,21 @@ import imgIconTools from "@/img/icon-tool.svg";
 import imgIconBolt from "@/img/icon-bolt.svg";
 import imgIconPig from "@/img/icon-pig.svg";
 import { H1, P } from "../Text/Text";
+
+const listVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3 } },
+};
 
 export default function Slider() {
   const scrollContainerRef = useRef(null);
@@ -109,11 +125,15 @@ export default function Slider() {
           ref={scrollContainerRef}
           className="relative hide-scrollbars overflow-x-scroll scroll-smooth overflow-hidden"
         >
-          <div
+          <motion.div
             className="w-[fit-content] grid grid-flow-col gap-3 md:gap-6 lg:gap-9"
             style={{
               padding: "0 calc(50vw - calc(min(100vw, 1024px)/2) + 30px)",
             }}
+            initial="hidden"
+            whileInView="visible"
+            variants={listVariants}
+            viewport={{ once: true }}
           >
             <Card
               title="Expert Technicians"
@@ -130,7 +150,7 @@ export default function Slider() {
               text="Get quality repairs without breaking the bank."
               img={imgIconPig}
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
@@ -139,8 +159,9 @@ export default function Slider() {
 
 function Card(props) {
   return (
-    <div
+    <motion.div
       className={`relative w-full min-w-[200px] p-6 rounded-xl overflow-hidden flex flex-col gap-3 ${props.className} bg-white`}
+      variants={itemVariants}
     >
       <div className="relative w-10 h-10">
         <Image
@@ -152,6 +173,6 @@ function Card(props) {
       </div>
       <P className="font-bold">{props.title}</P>
       <P>{props.text}</P>
-    </div>
+    </motion.div>
   );
 }

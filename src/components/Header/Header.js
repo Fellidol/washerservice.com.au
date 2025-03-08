@@ -14,9 +14,9 @@ import Section from "../Section";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <Outer className="fixed top-0 left-0 w-full z-10">
-      <NavbarMobile menuOpen={menuOpen} />
-      <NavbarDesktop menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+    <Outer>
+      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <NavMobile menuOpen={menuOpen} />
     </Outer>
   );
 };
@@ -27,7 +27,7 @@ const Outer = (props) => {
   );
 };
 
-const NavbarMobile = (props) => {
+const NavMobile = (props) => {
   return (
     <nav
       className={`lg:hidden absolute top-0 left-0 w-full bg-black bg-opacity-40 backdrop-blur-xl overflow-hidden transition-all duration-300 pt-[76px] origin-top`}
@@ -49,7 +49,7 @@ const NavbarMobile = (props) => {
   );
 };
 
-function NavbarDesktop(props) {
+function Navbar(props) {
   return (
     <div className="relative py-4 px-8 bg-black bg-opacity-40 backdrop-blur-xl z-10">
       <div className="max-w-[1024px] mx-auto flex justify-between align-middle lg:px-8">
@@ -81,14 +81,16 @@ function NavbarDesktop(props) {
         </button>
 
         <div className="flex items-center w-[167px] lg:w-[200px]">
-          <Image
-            src={imgLogo}
-            alt="Washer Service"
-            width={167}
-            height="auto"
-            priority
-            style={{ width: "100%", height: "auto" }}
-          />
+          <Link href="/">
+            <Image
+              src={imgLogo}
+              alt="Washer Service"
+              width={167}
+              height="auto"
+              priority
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Link>
         </div>
 
         <div className="hidden lg:flex items-center gap-6 text-white">

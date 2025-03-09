@@ -28,8 +28,3 @@ body {
 .hide-scrollbars::-webkit-scrollbar {
   display: none;
 }
-
-.leaflet-div-icon.leaflet-div-icon {
-  border: 0;
-  background: transparent;
-}

@@ -31,7 +31,7 @@ export default function SectionMap() {
                   className="rounded aspect-square h-[0.5em]"
                   style={{ backgroundColor: item.color }}
                 ></div>
-                <P>{item.name}</P>
+                <P className="town-list">{item.name}</P>
               </li>
             ))}
           </ul>

@@ -88,9 +88,9 @@ export default function Slider() {
   return (
     <>
       <Section className="pb-6 md:pb-[60px] lg:pb-[60px]">
-        <div className="relative flex place-content-between items-start text-white">
+        <div className="relative flex place-content-between items-center text-white">
           <H1>Brands</H1>
-          <div className="flex gap-6">
+          <div className="flex gap-4 lg:gap-6">
             <button
               ref={arrowPrevRef}
               className="relative w-[40px] h-[40px] rotate-180 transition-all"
@@ -151,7 +151,7 @@ function Card(props) {
       <div className="relative w-full aspect-square grid items-center justify-center">
         <Image
           src={props.img}
-          fill={true}
+          fill={props.name}
           alt="brand"
           style={{ objectFit: "contain" }}
         />

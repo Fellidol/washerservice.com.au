@@ -74,8 +74,7 @@ export default function Footer() {
           {brands.map((item) => {
             return (
               <P key={item.name}>
-                {/* <Link href="/brands">{item.name}</Link> */}
-                {item.name}
+                <Link href={`/brands#${item.id}`}>{item.name}</Link>
               </P>
             );
           })}
@@ -86,8 +85,7 @@ export default function Footer() {
           {towns.map((item) => {
             return (
               <P key={item.name}>
-                {/* <Link href="/towns">{item.name}</Link> */}
-                {item.name}
+                <Link href={`/towns/${item.id}`}>{item.name}</Link>
               </P>
             );
           })}

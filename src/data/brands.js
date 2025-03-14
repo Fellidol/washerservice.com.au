@@ -12,18 +12,18 @@ import speedqueen from "@/components/SliderBrands/images/speedqueen.svg";
 import asko from "@/components/SliderBrands/images/asko.svg";
 
 const brands = [
-  { name: "Fisher & Paykel", image: fisherPaykel },
-  { name: "Bosch", image: bosch },
-  { name: "Samsung", image: samsung },
-  { name: "LG", image: lg },
-  { name: "Simpson", image: simpson },
-  { name: "Hoover", image: hoover },
-  { name: "Kleenmaid", image: kleenmaid },
-  { name: "Whirlpool", image: whirlpool },
-  { name: "Ariston", image: ariston },
-  { name: "Westinghouse", image: westinghouse },
-  { name: "Speed Queen", image: speedqueen },
-  { name: "Asko", image: asko },
+  { id: "fisher-paykel", name: "Fisher & Paykel", image: fisherPaykel },
+  { id: "bosch", name: "Bosch", image: bosch },
+  { id: "samsung", name: "Samsung", image: samsung },
+  { id: "lg", name: "LG", image: lg },
+  { id: "simpson", name: "Simpson", image: simpson },
+  { id: "hoover", name: "Hoover", image: hoover },
+  { id: "kleenmaid", name: "Kleenmaid", image: kleenmaid },
+  { id: "whirlpool", name: "Whirlpool", image: whirlpool },
+  { id: "ariston", name: "Ariston", image: ariston },
+  { id: "westinghouse", name: "Westinghouse", image: westinghouse },
+  { id: "speed-queen", name: "Speed Queen", image: speedqueen },
+  { id: "asko", name: "Asko", image: asko },
 ];
 
 export default brands;

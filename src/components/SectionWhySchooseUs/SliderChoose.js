@@ -89,12 +89,12 @@ export default function Slider() {
   return (
     <>
       <Section className="pb-6 md:pb-[60px] lg:pb-[60px]">
-        <div className="relative flex place-content-between items-start text-white">
+        <div className="relative flex place-content-between items-center text-white">
           <H1>Why choose us?</H1>
-          <div className="flex gap-6 md:hidden">
+          <div className="flex items-center gap-4 md:hidden">
             <button
               ref={arrowPrevRef}
-              className="relative w-[40px] h-[40px] rotate-180 transition-all"
+              className="relative w-[40px] h-[30px] rotate-180 transition-all"
             >
               <Image
                 src={imgArrow}
@@ -146,7 +146,11 @@ export default function Slider() {
               img={imgIconBolt}
             />
             <Card
-              title="Affordable Rates"
+              title={
+                <>
+                  Affordable <br className="md:hidden" /> Rates
+                </>
+              }
               text="Get quality repairs without breaking the bank."
               img={imgIconPig}
             />

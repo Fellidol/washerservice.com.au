@@ -9,7 +9,7 @@ const Map = dynamic(() => import("@/components/SectionMap/Map"), {
   ssr: false,
 }); // Only import <Map /> on client side.
 
-export default function SectionMap() {
+export default function SectionMap(props) {
   return (
     <div className="relative h-auto bg-white sm:flex">
       <div className="relative w-full sm:w-auto sm:h-full basis-5/12 overflow-hidden ">
@@ -27,11 +27,9 @@ export default function SectionMap() {
                 key={item.color}
                 className="flex justify-center sm:justify-start items-center gap-3 p-0 m-0"
               >
-                <div
-                  className="rounded aspect-square h-[0.5em]"
-                  style={{ backgroundColor: item.color }}
-                ></div>
-                <P className="town-list">{item.name}</P>
+                <P className={`${props?.town?.id === item.id && "font-bold"}`}>
+                  {item.name}
+                </P>
               </li>
             ))}
           </ul>

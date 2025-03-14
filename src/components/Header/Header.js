@@ -93,10 +93,15 @@ function Navbar(props) {
           </Link>
         </div>
 
-        <div className="hidden lg:flex items-center gap-6 text-white">
+        <div className="hidden lg:flex items-center gap-1 text-white">
           {pages.map((item) => (
             <p key={item.name} className="text-base font-bold">
-              <Link href={item.href}>{item.name}</Link>
+              <Link
+                href={item.href}
+                className="transition duration-150 hover:bg-[rgba(255,255,255,0.1)] px-3 py-3 rounded-md"
+              >
+                {item.name}
+              </Link>
             </p>
           ))}
         </div>

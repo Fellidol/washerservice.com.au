@@ -15,12 +15,12 @@ import imgHeroMobile from "@/img/brands-hero-mobile.jpg";
 import MotionParallaxImg from "@/components/Motion/MotionParallaxImg";
 import BrandsGrid from "@/components/BrandsGrid/BrandsGrid";
 
-export default function Page() {
+export default function Page(props) {
   return (
     <>
       <Header />
       <main className="relative">
-        <Hero />
+        <Hero brand={props.brand} />
         <BrandsGrid />
         <SectionWhyChooseUs />
         <SectionContactUs />
@@ -30,7 +30,7 @@ export default function Page() {
   );
 }
 
-const Hero = () => (
+const Hero = (props) => (
   <MotionParallaxImg>
     <div className="relative bg-black z-0 overflow-hidden">
       <Image
@@ -53,7 +53,7 @@ const Hero = () => (
       <Section className="pt-[140px] pb-[180px] md:pt-[140px] lg:pt-[200px] lg:pb-[140px]">
         <div className="relative max-w-[450px] text-white grid gap-6">
           <MotionFadeInUp>
-            <H1>Brands</H1>
+            <Title brand={props.brand} />
           </MotionFadeInUp>
           <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.25 }}>
             <P>
@@ -95,3 +95,20 @@ const Hero = () => (
     </div>
   </MotionParallaxImg>
 );
+
+const Title = (props) => {
+  return (
+    <>
+      {props?.brand?.id ? (
+        <>
+          <P className="font-bold">We service</P>
+          <H1>{props.brand.name}</H1>
+        </>
+      ) : (
+        <>
+          <H1>Brands</H1>
+        </>
+      )}
+    </>
+  );
+};

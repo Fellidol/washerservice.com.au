@@ -10,9 +10,6 @@ import imgHero from "@/img/towns-hero-desktop.jpg";
 import imgHeroMobile from "@/img/towns-hero-mobile.jpg";
 import SectionMap from "@/components/SectionMap/SectionMap";
 import Hero from "@/components/Hero/Hero";
-import { useParams } from "next/navigation";
-import { notFound } from "next/navigation"; // Redirect to 404 page
-import { towns } from "@/data";
 
 export default function Page(props) {
   return (

@@ -22,7 +22,7 @@ export default function Footer() {
             />
           </div>
           <div>
-            <P className="font-bold">Opening hours</P>
+            <FooterTitle>Opening hours</FooterTitle>
             <ul className="list-disc pl-4">
               <li>
                 <P>Mon to Sat</P>
@@ -33,7 +33,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <P className="font-bold"> Payment method</P>
+            <FooterTitle>Payment method</FooterTitle>
             <ul className="list-disc pl-4">
               <li>
                 <P>Cash</P>
@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-3">
-            <P className="font-bold">Call Mario and save</P>
+            <FooterTitle>Call Mario and save</FooterTitle>
             <div>
               <Button
                 icon="phone"
@@ -58,39 +58,58 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* <div className="flex flex-col gap-2 lg:pt-3">
-          <P className="font-bold">Pages</P>
-          {pages.map((item) => {
-            return (
-              <P key={item.name}>
-                <Link href={item.href}>{item.name}</Link>
-              </P>
-            );
-          })}
-        </div> */}
+        <FooterLinkGroup title="Pages">
+          {pages.map((item, i) => (
+            <FooterLink key={`${item.id}-${i}`} {...item} />
+          ))}
+        </FooterLinkGroup>
 
-        <div className="flex flex-col gap-2 lg:pt-3">
-          <P className="font-bold">Brands</P>
-          {brands.map((item) => {
-            return (
-              <P key={item.name}>
-                <Link href={`/brands#${item.id}`}>{item.name}</Link>
-              </P>
-            );
-          })}
-        </div>
+        <FooterLinkGroup title="Brands">
+          {brands.map((item, i) => (
+            <FooterLink
+              key={`${item.id}-${i}`}
+              path="/brands/"
+              name={item.name}
+              href={item.id}
+            />
+          ))}
+        </FooterLinkGroup>
 
-        <div className="flex flex-col gap-2 lg:pt-3">
-          <P className="font-bold">Towns</P>
-          {towns.map((item) => {
-            return (
-              <P key={item.name}>
-                <Link href={`/towns/${item.id}`}>{item.name}</Link>
-              </P>
-            );
-          })}
-        </div>
+        <FooterLinkGroup title="Towns">
+          {towns.map((item, i) => (
+            <FooterLink
+              key={`${item.id}-${i}`}
+              path="/towns/"
+              name={item.name}
+              href={item.id}
+            />
+          ))}
+        </FooterLinkGroup>
       </Section>
     </footer>
   );
 }
+
+const FooterTitle = (props) => {
+  return <P className="font-bold">{props.children}</P>;
+};
+
+const FooterLinkGroup = (props) => {
+  return (
+    <div className="flex flex-col items-start gap-2 lg:pt-3">
+      <FooterTitle>{props.title}</FooterTitle>
+      {props.children}
+    </div>
+  );
+};
+
+const FooterLink = (props) => {
+  return (
+    <P className="group transition duration-100">
+      <Link href={`${props.path}${props.href}`}>
+        {props.name}
+        <span className="block max-w-0 group-hover:max-w-full transition-all duration-150 h-0.5 bg-white"></span>
+      </Link>
+    </P>
+  );
+};

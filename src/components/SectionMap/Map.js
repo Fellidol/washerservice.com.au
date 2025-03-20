@@ -28,10 +28,10 @@ function Map() {
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <MapContainer
+        className="w-full h-full"
         center={mapCenter}
         scrollWheelZoom={false} // Disable scroll-to-zoom
         // dragging={false} // Disable panning
-        style={{ height: "100%", width: "100%" }}
         zoom={9}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

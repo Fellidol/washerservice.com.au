@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 // import Map from "./Map";
-import { H1, P } from "../Text/Text";
+import { H2, P } from "../Text/Text";
 import towns from "@/data/towns";
 
 const Map = dynamic(() => import("@/components/SectionMap/Map"), {
@@ -20,7 +20,7 @@ export default function SectionMap(props) {
             paddingLeft: "calc(50vw - calc(min(100vw, 1024px)/2) + 32px)",
           }}
         >
-          <H1 className="mb-8">Towns we service</H1>
+          <H2 className="mb-8">Towns we service</H2>
           <ul className=" mb-4">
             {towns.map((item) => (
               <li

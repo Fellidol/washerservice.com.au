@@ -7,10 +7,14 @@ export default function Button(props) {
   return (
     <a
       href={props.href}
-      className={`inline-block py-3 px-5 bg-[#007EA7] rounded-lg ${props.className}`}
+      className={`inline-block py-3 px-5 bg-[#007EA7] rounded-lg drop-shadow-lg hover:scale-[1.03] transition-all duration-200 ${
+        props.className && props.className
+      }`}
     >
       <div
-        className={`flex gap-3 justify-center items-center ${props.iconClassName}`}
+        className={`flex gap-3 justify-center items-center ${
+          props.iconClassName ?? ""
+        }`}
       >
         {props.icon == "phone" && (
           <div className="relative w-4 h-4 lg:w-5 lg:h-5 flex justify-center items-center">
@@ -25,7 +29,9 @@ export default function Button(props) {
         )}
         {props.children && (
           <div
-            className={`font-bold text-base lg:text-xl text-white ${props.textClassName}`}
+            className={`font-bold text-base lg:text-xl text-white drop-shadow-sm ${
+              props.textClassName && props.textClassName
+            }`}
           >
             {props.children}
           </div>
@@ -39,9 +45,15 @@ export function ButtonWhite(props) {
   return (
     <a
       href={props.href}
-      className={` py-3 px-5 bg-[#FFFFFF] rounded-lg ${props.className}`}
+      className={` py-3 px-5 bg-[#FFFFFF] rounded-lg hover:scale-[1.03] transition-all duration-200 ${
+        props.className && props.className
+      }`}
     >
-      <div className="flex gap-3 justify-center items-center">
+      <div
+        className={`flex gap-3 justify-center items-center ${
+          props.iconClassName ?? ""
+        }`}
+      >
         {props.icon == "phone" && (
           <div className="relative w-4 h-4 lg:w-5 lg:h-5 flex justify-center items-center">
             <Image

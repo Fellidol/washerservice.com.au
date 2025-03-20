@@ -53,7 +53,14 @@ const Hero = (props) => (
       <Section className="pt-[140px] pb-[180px] md:pt-[140px] lg:pt-[200px] lg:pb-[140px]">
         <div className="relative max-w-[450px] text-white grid gap-6">
           <MotionFadeInUp>
-            <Title brand={props.brand} />
+            {props?.brand?.id ? (
+              <>
+                <P className="font-bold">We service</P>
+                <H1>{props.brand.name}</H1>
+              </>
+            ) : (
+              <H1>Brands</H1>
+            )}
           </MotionFadeInUp>
           <MotionFadeInUp className="grid gap-4" transition={{ delay: 0.25 }}>
             <P>
@@ -95,20 +102,3 @@ const Hero = (props) => (
     </div>
   </MotionParallaxImg>
 );
-
-const Title = (props) => {
-  return (
-    <>
-      {props?.brand?.id ? (
-        <>
-          <P className="font-bold">We service</P>
-          <H1>{props.brand.name}</H1>
-        </>
-      ) : (
-        <>
-          <H1>Brands</H1>
-        </>
-      )}
-    </>
-  );
-};

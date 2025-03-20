@@ -68,9 +68,8 @@ export default function Footer() {
           {brands.map((item, i) => (
             <FooterLink
               key={`${item.id}-${i}`}
-              path="/brands/"
               name={item.name}
-              href={item.id}
+              href={`/brands/${item.id}`}
             />
           ))}
         </FooterLinkGroup>
@@ -79,9 +78,8 @@ export default function Footer() {
           {towns.map((item, i) => (
             <FooterLink
               key={`${item.id}-${i}`}
-              path="/towns/"
               name={item.name}
-              href={item.id}
+              href={`/towns/${item.id}`}
             />
           ))}
         </FooterLinkGroup>
@@ -90,26 +88,20 @@ export default function Footer() {
   );
 }
 
-const FooterTitle = (props) => {
-  return <P className="font-bold">{props.children}</P>;
-};
+const FooterTitle = (props) => <P className="font-bold">{props.children}</P>;
 
-const FooterLinkGroup = (props) => {
-  return (
-    <div className="flex flex-col items-start gap-2 lg:pt-3">
-      <FooterTitle>{props.title}</FooterTitle>
-      {props.children}
-    </div>
-  );
-};
+const FooterLinkGroup = (props) => (
+  <div className="flex flex-col items-start gap-2 lg:pt-3">
+    <FooterTitle>{props.title}</FooterTitle>
+    {props.children}
+  </div>
+);
 
-const FooterLink = (props) => {
-  return (
-    <P className="group transition duration-100">
-      <Link href={`${props.path}${props.href}`}>
-        {props.name}
-        <span className="block max-w-0 group-hover:max-w-full transition-all duration-150 h-0.5 bg-white"></span>
-      </Link>
-    </P>
-  );
-};
+const FooterLink = (props) => (
+  <P className="group transition duration-100">
+    <Link href={`${props.href}`}>
+      {props.name}
+      <span className="block max-w-0 group-hover:max-w-full transition-all duration-150 h-0.5 bg-white"></span>
+    </Link>
+  </P>
+);

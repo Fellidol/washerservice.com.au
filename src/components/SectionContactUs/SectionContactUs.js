@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { H1, P } from "../Text/Text";
+import { H2, P } from "../Text/Text";
 import { ButtonWhite } from "../Button/Button";
 import imgContact from "./contact.jpg";
 import { contact } from "@/data";
@@ -14,7 +14,6 @@ export default function SectionContactUs() {
           src={imgContact}
           alt="Washing machine in laundry room"
           fill={true}
-          priority
         />
       </div>
       <div
@@ -26,7 +25,7 @@ export default function SectionContactUs() {
         <div className="max-w-[350px] py-8 md:py-[60px] lg:py-[120px] grid gap-8">
           <MotionFadeInUp>
             <div className="grid gap-4">
-              <H1>Contact us</H1>
+              <H2>Contact us</H2>
               <P>
                 Have questions? Need a quote? <br />
                 Give us a call, we&apos;re here to help.

@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "../Section";
-import { H1, P } from "../Text/Text";
+import { H2, P } from "../Text/Text";
 import Image from "next/image";
 import Button from "../Button/Button";
 import MotionFadeInUp from "@/components/Motion/MotionFadeInUp";
@@ -13,9 +13,9 @@ export default function SectionAboutUs() {
       <Section>
         <div className="flex flex-col gap-4 md:flex-row md:gap-16">
           <MotionFadeInUp className="md:hidden">
-            <H1 className="text-balance">
+            <H2 className="text-balance">
               Trusted Washing Machine Repair for over 50 years!
-            </H1>
+            </H2>
           </MotionFadeInUp>
 
           <div className="relative aspect-video w-full rounded-lg lg:aspect-square">
@@ -30,9 +30,9 @@ export default function SectionAboutUs() {
 
           <div className="w-full flex flex-col gap-6 justify-center">
             <MotionFadeInUp className="hidden md:block">
-              <H1 className="text-balance">
+              <H2 className="text-balance">
                 Trusted Washing Machine Repairman for over 50 years
-              </H1>
+              </H2>
             </MotionFadeInUp>
 
             <MotionFadeInUp>

@@ -33,7 +33,7 @@ export default function SectionMap(props) {
               </li>
             ))}
           </ul>
-          <P>and all surrounding areas</P>
+          <P>and most Melbourne suburbs.</P>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-[60px] lg:h-[120px] bg-gradient-to-t from-white to-white-0" />
       </div>

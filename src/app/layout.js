@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const montserrat = localFont({
@@ -14,7 +15,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} antialiased`}>{children}</body>
+      <body className={`${montserrat.className} antialiased`}>
+        {children}
+        <GoogleAnalytics gaMeasurementId="G-KP5EWEWM2N" />
+      </body>
     </html>
   );
 }

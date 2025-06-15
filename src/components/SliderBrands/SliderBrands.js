@@ -1,12 +1,28 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import smoothscroll from "smoothscroll-polyfill";
 import Section from "@/components/Section";
 import imgArrow from "@/img/arrow-right.svg";
-import { H1, P } from "../Text/Text";
+import { H2 } from "../Text/Text";
 import brands from "@/data/brands";
+
+const listVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3 } },
+};
 
 export default function Slider() {
   const scrollContainerRef = useRef(null);
@@ -56,6 +72,7 @@ export default function Slider() {
       });
     }
 
+    // TODO - dont use a static value, should calc depending on breakpoint
     function calcScrollDistance() {
       const distance2 = 288;
       return distance2;
@@ -71,9 +88,9 @@ export default function Slider() {
   return (
     <>
       <Section className="pb-6 md:pb-[60px] lg:pb-[60px]">
-        <div className="relative flex place-content-between items-start text-white">
-          <H1>Brands</H1>
-          <div className="flex gap-6">
+        <div className="relative flex place-content-between items-center text-white">
+          <H2>Brands</H2>
+          <div className="flex gap-4 lg:gap-6">
             <button
               ref={arrowPrevRef}
               className="relative w-[40px] h-[40px] rotate-180 transition-all"
@@ -102,22 +119,29 @@ export default function Slider() {
         </div>
       </Section>
 
-      <div className="relative">
-        <div
-          ref={scrollContainerRef}
-          className="relative hide-scrollbars overflow-x-scroll scroll-smooth overflow-hidden"
+      <div
+        ref={scrollContainerRef}
+        className="relative hide-scrollbars overflow-x-scroll scroll-smooth py-3"
+      >
+        <motion.div
+          className="w-[fit-content] grid grid-flow-col gap-3 md:gap-6 lg:gap-9"
+          style={{
+            padding: "0 calc(50vw - calc(min(100vw, 1024px)/2) + 30px)",
+          }}
+          initial="hidden"
+          whileInView="visible"
+          variants={listVariants}
+          viewport={{ once: true }}
         >
-          <div
-            className="w-[fit-content] grid grid-flow-col gap-3 md:gap-6 lg:gap-9"
-            style={{
-              padding: "0 calc(50vw - calc(min(100vw, 1024px)/2) + 30px)",
-            }}
-          >
-            {brands.map((item) => (
-              <Card key={item.name} img={item.image} alt={item.name} />
-            ))}
-          </div>
-        </div>
+          {brands.map((item) => (
+            <Card
+              key={item.name}
+              id={item.id}
+              img={item.image}
+              alt={item.name}
+            />
+          ))}
+        </motion.div>
       </div>
     </>
   );
@@ -125,17 +149,16 @@ export default function Slider() {
 
 function Card(props) {
   return (
-    <div
-      className={`relative w-[140px] md:w-[180px] lg:w-[200px] p-4 rounded-xl overflow-hidden flex flex-col gap-3 bg-white ${props.className}`}
+    <motion.a
+      className={`relative w-[140px] md:w-[180px] lg:w-[200px] p-4 rounded-xl flex flex-col gap-3 bg-white drop-shadow-lg hover:scale-[1.04] transition-transform duration-200 ${
+        props.className && props.className
+      }`}
+      variants={itemVariants}
+      href={`/brands/${props.id}`}
     >
-      <div className="relative w-full aspect-square grid items-center justify-center">
-        <Image
-          src={props.img}
-          fill={true}
-          alt="brand"
-          style={{ objectFit: "contain" }}
-        />
-      </div>
-    </div>
+      <span className="relative w-full aspect-square grid items-center justify-center">
+        <Image src={props.img} fill={true} alt={props.alt} />
+      </span>
+    </motion.a>
   );
 }
